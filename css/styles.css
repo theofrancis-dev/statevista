@@ -1,0 +1,118 @@
+/*
+color palette
+source: https://colors.muz.li/palette/454d66/309975/58b368/dad873/efeeb4
+
+Color Classification:
+--primary: #309975 (Great for buttons, headings, and main CTAs)
+--secondary: #454d66 (Perfect for navigation, footer, and text)
+--accent: #dad873 (Use for highlights, hover states, or emphasized elements)
+--background: #efeeb4 (Ideal for page background or light sections)
+--success (support): #58b368 (Can be used for notifications, confirmations, etc.)
+
+
+*/
+
+:root {
+    --primary: #309975;
+    --secondary: #454d66;
+    --accent: #dad873;
+    --background: #efeeb4;
+    --success: #58b368;
+}
+
+.hero_h1 {
+    color: var(--success);
+    font-size: 3rem;  /* Adjust size as needed */
+    font-weight: 900;
+    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
+}
+
+.hero_h2 {
+    color: var(--success);
+    font-size: 2rem;  /* Adjust size as needed */
+    font-weight: 700;
+    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: var(--background);
+}
+
+header,
+footer {
+    background-color: var(--secondary);
+    color: white;
+    padding: 15px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+.feature-card,
+.city-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.aside-menu {
+    background-color: var(--secondary);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.footer-links a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+li > a {
+    color: white;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+
+.city-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  #city-info {
+    flex: 0 0 25%; /* Adjusts to roughly 3/12 or 25% of the space */
+  }
+  
+  #city-img {
+    flex: 1; /* Takes up the remaining space */
+  }
+  
+  .city-stat-card {
+    margin-bottom: 5px;
+  }
+  /* For smaller screens, you might want them to stack */
+  @media (max-width: 768px) {
+    .city-row {
+      flex-direction: column;
+    }
+    #city-info, #city-img {
+      width: 100%;
+    }
+  }
+
+  
