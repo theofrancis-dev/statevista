@@ -1,4 +1,4 @@
-const jsonURL = `https://www.dropbox.com/scl/fi/5wr3jansvbhqf66803b5l/city-data-v2.json?rlkey=7fbrcdsbk83dfb85r0phwv1cq&st=cu44a18l&dl=1`;
+const jsonURL = `'https://theofrancis-dev.github.io/statevista/data/city-data.json'`;
 
 function displayCityInfo() {
     const cityHash = window.location.hash;
