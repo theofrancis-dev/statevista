@@ -1,4 +1,6 @@
-const jsonURL = `'https://theofrancis-dev.github.io/statevista/data/city-data.json'`;
+//const jsonURL = `'https://theofrancis-dev.github.io/statevista/data/city-data.json'`;
+const jsonURL = "./data/city-data.json";
+const cityData = '';
 
 function displayCityInfo() {
     const cityHash = window.location.hash;
@@ -9,11 +11,7 @@ function displayCityInfo() {
     // Use this cityName to fetch and display the correct info.
 
     // Example using a simple lookup table (replace with your actual data):
-    const cityData = {
-        city1: { name: "City 1", population: 100000, description: "..." },
-        city2: { name: "City 2", population: 200000, description: "..." },
-        city3: { name: "City 3", population: 150000, description: "..." },
-      };
+   
   
       if (cityData.hasOwnProperty(cityName)) {
          const cityInfo = cityData[cityName];
@@ -30,50 +28,7 @@ function displayCityInfo() {
     }
   }
   
-  async function getCityDescription(cityName, jsonURL) {
-    try {
-        const response = await fetch(jsonURL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const cityData = await response.json();
-
-        for (const city of cityData) {
-            if (city.city === cityName) {
-                return city.description;
-            }
-        }
-        return "Description not found for this city.";
-    } catch (error) {
-        console.error("Error fetching or parsing JSON:", error);
-        return "Error loading city data."; // Or a more specific error message
-    }
-}
-
-async function getCityLandmarks(cityName, jsonURL) {
-    try {
-        const response = await fetch(jsonURL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const cityData = await response.json();
-
-        for (const city of cityData) {
-            if (city.city === cityName) {
-                return city.landmarks;
-            }
-        }
-        return [];
-    } catch (error) {
-        console.error("Error fetching or parsing JSON:", error);
-        return []; // Return empty array to avoid errors
-    }
-}
-
-async function displayCityInfo(cityName, jsonURL) {    
-    const description = await getCityDescription(cityName, jsonURL); // Use await
-    const landmarks = await getCityLandmarks(cityName, jsonURL);     // Use await
-
+function displayCityLandmarks(cityName) {  
     document.getElementById("city-description").textContent = description;
 
     const landmarksContainer = document.getElementById("landmarks-container");
@@ -95,11 +50,42 @@ async function displayCityInfo(cityName, jsonURL) {
         });
     }
 }
+  async function getCityDescription(cityName) {
+    console.log ('function getCityDescription');
+    return;
+    try {   
 
-//displayCityInfo(cityName, jsonURL); // Call with the URL
+        for (const city of cityData) {
+            if (city.city === cityName) {
+                return city.description;
+            }
+        }
+        return "Description not found for this city.";
+    } catch (error) {
+        console.error("Error fetching or parsing JSON:", error);
+        return "Error loading city data."; // Or a more specific error message
+    }
+}
+
+async function getCityLandmarks(cityName) {
+    try {
+        for (const city of cityData) {
+            if (city.city === cityName) {
+                return city.landmarks;
+            }
+        }
+        return [];
+    } catch (error) {
+        console.error("Error fetching or parsing JSON:", error);
+        return []; // Return empty array to avoid errors
+    }
+}
+
 
 // Event listener for hash changes:
 window.addEventListener('hashchange', function() {
+    console.log ('hashchnage function.')
+    return;
     const cityHash = window.location.hash;
     if (cityHash) {
         const cityName = cityHash.substring(1);
@@ -107,22 +93,42 @@ window.addEventListener('hashchange', function() {
     }
 });
 
-// Event listener for initial page load
-window.addEventListener('load', function() {
-    console.log(`cityvista page loaded. starting js...`);
-    const cityHash = window.location.hash;
-    if (cityHash) {
-        const cityName = cityHash.substring(1);        
-        console.log(`displaying city info for ${cityName}`);
-        //displayCityInfo(cityName, jsonURL); // Pass the URL here as well
-    }
-    else {
-        console.log(`error parsing cityHash : ${cityHash}`);
-    }
-});
+function fetchCityData ( json_url) {
+    console.log(`fetching data from ${json_url}`);
+    fetch(json_url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      // Check content type to handle JSON or other files
+      const contentType = response.headers.get('Content-Type');
+      if (contentType && contentType.includes('application/json')) {
+        return response.json(); // Parse as JSON
+      } else {
+        throw new Error(`JSON error! status: ${response.status}`);
+      }
+    })
+    .then(data => {
+        cityData = data; 
+        console.log(`data loaded ${cityData.length} bytes`);   
+    })
+    .catch(error => {
+      console.error('Error fetching or parsing JSON:', error);
+      const errorElement = document.getElementById('error-message');
+      if (errorElement) {
+        errorElement.textContent = 'Error loading data. Please try again later.';
+      }
+    });
 
-  window.addEventListener('load', displayCityInfo);
-  //window.addEventListener('hashchange', displayCityInfo);
+}
+// Event listener for initial page load
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {    
+    fetchCityData(jsonURL);
+  });
+
+
+  
 
   /*
   async and await: The getCityDescription, getCityLandmarks, and displayCityInfo functions are now async.  
