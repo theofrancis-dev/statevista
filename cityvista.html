@@ -172,11 +172,11 @@
         <main>
             <!--City Name & Description-->
             <section>
-              <div class=row>
-            <div class="col-md-12">
-              <h1 id="city_name">City Name</h1>
-              <h2 id="city_description">city description</h2>
-            </div>
+              <div class="row">
+              <div class="col-md-12 text-center city-info-head">
+                <h1 id="city_name">City Name</h1>
+                <h5 id="city_description" style="text-align: justify;">city description</h5>
+              </div>
               </div>
             </section>
             <!--section with general information about the state-->
@@ -206,7 +206,7 @@
                     <img src="./img/compass.jpg" class="card-img-top" alt="Washington City Hall">
                     <div class="card-body">
                       <h5 class="card-title">Region Located</h5>
-                      <p id="city_incorporated" class="card-text">yyyy</p>
+                      <p id="city_located" class="card-text">located</p>
                     </div>
                   </div>
 
@@ -215,7 +215,7 @@
                     <img src="./img/suburban.jpg" class="card-img-top" alt="Washington City Hall">
                     <div class="card-body">
                       <h5 class="card-title">Clasification</h5>
-                      <p id="city_incorporated" class="card-text">suburban</p>
+                      <p id="city_type" class="card-text">city type</p>
                     </div>
                   </div>
 
@@ -223,7 +223,7 @@
                     <img src="./img/compass.jpg" class="card-img-top" alt="Washington City Hall">
                     <div class="card-body">
                       <h5 class="card-title">Income Level</h5>
-                      <p id="city_incorporated" class="card-text">yyyy</p>
+                      <p id="city_avg_income" class="card-text">$0</p>
                     </div>
                   </div>      
                 
@@ -233,36 +233,30 @@
               <!--city pictures-->
               <div  id="city-img" class="col-md-9">
 
-                <div id="city_img_container">
-                <img
-                        src="./private/testing/img1.jpg"
-                        class="card-img-top"
-                        alt="test image"
-                      />            
-                <h4>place name</h4>
-                <h5>coypright</h5>      
-                </div>
+                <div id="landmark-conatiner">
+                  <div class="row">
+                    <div class="col">
+                      <div id="city_img_container">
+                        <img
+                                src="${src}"
+                                class="card-img-top"
+                                alt="test image"
+                              />       
+                      </div> 
+                      <div id="place_description">place description placeholder</div>
+                    </div> <!--col img-->
+                  </div> 
 
-                <div id="city_img_container">
-                  <img
-                          src="./private/testing/img2.jpg"
-                          class="card-img-top"
-                          alt="test image"
-                        />            
-                  <h4>place name</h4>
-                  <h5>coypright</h5>      
-                  </div>
-
-                  <div id="city_img_container">
-                    <img
-                            src="./private/testing/img3.jpg"
-                            class="card-img-top"
-                            alt="test image"
-                          />            
-                    <h4>place name</h4>
-                    <h6>coypright</h6>      
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a id="place_website" href="${website}" target="_blank"><h4 id="place_name">place name</h4>  
+                      </a>
                     </div>
-
+                    <div class="col-md-6">
+                      <a href="${source_url}" target="_blank"> Photo by ${author} </a>
+                    </div>    
+                  </div>
+                </div>
 
               </div>
 

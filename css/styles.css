@@ -87,7 +87,17 @@ a:hover {
     color: var(--accent);
 }
 
+#city-info-head > h1 {
+    text-align: center;
+}
 
+#city-info-head > h5 {
+    text-align: justify;
+}
+
+.city-info-head {
+    margin-bottom: 10px;
+}
 .city-row {
     display: flex;
     justify-content: space-between;
@@ -114,5 +124,6 @@ a:hover {
       width: 100%;
     }
   }
+
 
   

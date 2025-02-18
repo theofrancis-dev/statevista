@@ -1,5 +1,5 @@
-[
-    {
+{
+ "Warwick" :   {
         "city": "Warwick",
         "description" : "Warwick, Rhode Island, is a city steeped in history and natural beauty, offering a blend of urban amenities and suburban charm. Located on the western shore of Narragansett Bay, it boasts a rich maritime heritage and played a significant role in the American Industrial Revolution. Today, Warwick is a diverse community with attractions ranging from historic lighthouses and restored amusement parks to working farms and scenic waterfront areas.                        It's a convenient location with easy access to Providence and other parts of the state, making it a desirable place to live, work, and visit..",
         "population" : "82,999 (2023)",
@@ -58,6 +58,8 @@
             }
         ]
     },
+
+    "Providence" :
     {
         "city": "Providence",
         "description" : "Providence, is a vibrant and historic city, the capital of the state, and a hub of culture, education, and innovation. Founded in 1636 by Roger Williams, it boasts a rich history evident in its architecture, from Colonial buildings to stunning examples of industrial-era craftsmanship. Home to Brown University and the Rhode Island School of Design, Providence enjoys a youthful energy and a thriving arts scene.                         Its revitalized downtown area, along the Providence River, is known for its award-winning restaurants, unique shops,                        and the captivating WaterFire installation.  Providence offers a blend of big-city amenities and a friendly, walkable atmosphere, making it a dynamic destination in the heart of New England.",
@@ -117,6 +119,8 @@
             }
         ]
     },
+
+    "Newport" :
     {
         "city": "Newport",
         "description" : "Captivating coastal city renowned for its opulent Gilded Age mansions, scenic Cliff Walk, and rich maritime history.  Perched on the edge of Narragansett Bay, this charming city offers a blend of historic grandeur and modern attractions.   From exploring the lavish summer cottages of the Vanderbilt and Astor families to sailing in the harbor or strolling along the breathtaking coastline, Newport provides a glimpse into a bygone era while remaining a vibrant destination. Its picturesque harbor, diverse culinary scene, and world-class events like the Newport Folk Festival  and Newport Jazz Festival contribute to its enduring appeal, making it a treasured gem in New England",
@@ -176,4 +180,4 @@
             }
         ]
     }
-]
+}
