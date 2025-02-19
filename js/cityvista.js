@@ -7,6 +7,7 @@ const cityData = JSON.parse(
         "incorporated" : "1931",
         "type" : "historic, coastal city",
         "avg_income" : "$ 43,859 (2022)",
+        "located":"Located in Kent County, Rhode Island, USA. It is situated along the western shore of Narragansett Bay, south of Providence and north of East Greenwich.",
         "updated" : "2025-02-17",
         "landmarks": [
             {
@@ -68,6 +69,7 @@ const cityData = JSON.parse(
         "incorporated" : "1831",
         "type" : "cultural, commercial, and political center.",
         "avg_income" : "$29,539 (2022)",
+        "located": "Located in Providence County, Rhode Island, USA. It is situated at the head of Narragansett Bay, near the mouth of the Providence River. It's the capital city of Rhode Island and lies in the northeastern part of the state.",
         "updated" : "2025-02-17",
         "landmarks": [
             {
@@ -125,10 +127,11 @@ const cityData = JSON.parse(
     {
         "name": "Newport",
         "description" : "Captivating coastal city renowned for its opulent Gilded Age mansions, scenic Cliff Walk, and rich maritime history.  Perched on the edge of Narragansett Bay, this charming city offers a blend of historic grandeur and modern attractions.   From exploring the lavish summer cottages of the Vanderbilt and Astor families to sailing in the harbor or strolling along the breathtaking coastline, Newport provides a glimpse into a bygone era while remaining a vibrant destination. Its picturesque harbor, diverse culinary scene, and world-class events like the Newport Folk Festival  and Newport Jazz Festival contribute to its enduring appeal, making it a treasured gem in New England",
-        "population" : "25,087",
+        "population" : "24717 (2023)",
         "incorporated" : "1784",
         "type" : "seaside city",
-        "avg_income" : "$81,330",
+        "avg_income" : "$81,330 (2022)",
+        "located":"Located on the southern tip of Aquidneck Island in Rhode Island, USA. It's situated in Newport County, along the shores of Narragansett Bay.",
         "updated" : "2025-02-17",
         "landmarks": [
             {
@@ -165,7 +168,7 @@ const cityData = JSON.parse(
             },
             {
                 "name": "Newport Harbor",
-                "website": "https://www.discovernewport.org/things-to-do/on-the-water/",
+                "website": "https://www.discovernewport.org",
                 "description": "A bustling harbor with scenic views, boat tours, and waterfront dining.",
                 "src": "https://www.dropbox.com/scl/fi/z8aannlukg4rv3nk9nvb5/newport_harbor.jpg?rlkey=48qxpc6x9ef030xl5iv0u1zv2&st=vmdgx7u3&raw=1",
                 "author": "Carol M. Highsmith, Wikipedia",
@@ -199,6 +202,9 @@ function displayCityInfo() {
          document.getElementById("city_incorporated").textContent = cityInfo.incorporated;
          document.getElementById("city_type").textContent = cityInfo.type;
          document.getElementById("city_avg_income").textContent = cityInfo.avg_income;
+         document.getElementById("city_located").textContent = cityInfo.located;
+         //landmarks
+         displayCityLandmarks(cityName);
 
       } else {
         // Handle cases where the city name is not valid
@@ -228,21 +234,17 @@ landmarks.forEach(landmark => {
                     <div id="city_img_container">
                         <img src="${landmark.src}" class="card-img-top" alt="${landmark.name}" />       
                     </div> 
-                    <div id="place_description">${landmark.description}</div>
-                </div>
-            </div> 
-
-            <div class="row">
-                <div class="col-md-6">
-                    <a id="place_website" href="${landmark.website}" target="_blank">
-                        <h4 id="place_name">${landmark.name}</h4>
+                    <div id="place_description">
+                     <a id="place_website" href="${landmark.website}" target="_blank">
+                        <span id="place_name">${landmark.name}</span>
                     </a>
+                    ${landmark.description}
+                    <a id="photo_author" href="${landmark.source_url}" target="_blank"> Photo by ${landmark.author} </a>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="${landmark.source_url}" target="_blank"> Photo by ${landmark.author} </a>
-                </div>    
-            </div>
+            </div>             
         </div>
+        <hr>
     `;
 
     // Insertar el HTML generado en el contenedor principal
@@ -251,19 +253,10 @@ landmarks.forEach(landmark => {
 
 }
 
-
-
-
 // Event listener for hash changes:
-window.addEventListener('hashchange', function() {
-    console.log ('hashchnage function.')
-    return;
-    const cityHash = window.location.hash;
-    if (cityHash) {
-        const cityName = cityHash.substring(1);
-        displayCityInfo(cityName, jsonURL); // Pass the URL here as well
-    }
-});
+window.addEventListener('hashchange', () =>
+    displayCityInfo()
+);
 
 
 // Event listener for initial page load

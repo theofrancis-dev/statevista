@@ -115,6 +115,19 @@ a:hover {
   .city-stat-card {
     margin-bottom: 5px;
   }
+
+  #place_name {
+    font-size : 1.2rem;
+  }
+
+  #photo_author {
+    font-size: small;
+  }
+
+  #place_description {
+    margin-top:10px;
+  }
+
   /* For smaller screens, you might want them to stack */
   @media (max-width: 768px) {
     .city-row {
