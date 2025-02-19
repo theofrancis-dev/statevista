@@ -150,4 +150,19 @@ a:hover {
 #lbl_gen_info {
     text-align: center;
 }
+
+.glow-link {
+    display: inline-block; 
+    padding: 5px 10px; /* space around the text */
+    text-decoration: none; /* no underlaying */
+    color: var(--success); /* text color*/
+    transition: text-shadow 0.3s ease; /* smooth trasiction */
+}
+
+.glow-link:hover {    
+    text-shadow: 0 0 10px var(--success), 
+                 0 0 20px var(--success), 
+                 0 0 30px var(--success); /* bright by layers */
+    color: var(--success);
+}
   

@@ -38,7 +38,7 @@ const cityData = JSON.parse(
                 "name": "Conimicut Point Park",
                 "website": "https://www.warwickri.gov/conimicut-point-park",
                 "description": "A waterfront park with a beach, playground, and picnic areas.",
-                "src": "url_to_conimicut_point_park_image",
+                "src": "https://www.dropbox.com/scl/fi/sfc26nvqb8lxnxethm01p/conimicut.jpg?rlkey=f8mbqtbaap87pvpqfuej7s3td&st=2ftfbb7q&raw=1",
                 "author": "Dietmar Down, Flickr",
                 "source_url": "https://www.flickr.com/photos/dietmardownunder/28988532188/in/photolist-LaBNF7-n6vkUC-265hyw5-23obbHb-265hxQq-2oM4Hoe-qD99WZ-qmKGfm-2ZaYVY-2fBBsJs-2kRzqsG-Jb8G2P-e8iJPu-dZfttF-2kRvMEg-dqJTVd-Yf7gjY-dDTNxb-k6hZtM-iDUgqn-Yf7gF9-dqJTZd-2kRvMFo-e8d4v8-dqJU2Q-4LSdzz-dNyX3V-4LWocL-YiBv4p-dZmbUy-n5MUgg-dWUSqu-dqJJp8-dWPdyH-dwc1ek-dhVVGM-iFTK6k-iFTKrv-dDNqTk-e8d4up-dqJU1E-e8iJNw-e8iJP9-7ZV7TB-dhVVwy-81bie2-6ChtMW-dWPdzn-e2zwiq-e8iJQ3"
             },
@@ -219,13 +219,16 @@ function displayCityInfo() {
   }
   
 function displayCityLandmarks(cityName) {  
-// Seleccionar el contenedor donde se agregarán los landmarks
+// get container
 const cityImgContainer = document.getElementById("city-img");
+// remove previous images
+cityImgContainer.innerHTML = '';
 
-// Obtener los landmarks del objeto JSON
+//get new landmarks
 const landmarks = cityData[cityName].landmarks;
 
-// Generar dinámicamente el HTML para cada landmark
+
+//dinamically create new html
 landmarks.forEach(landmark => {
     const landmarkHTML = `
         <div id="landmark-container">
@@ -247,7 +250,7 @@ landmarks.forEach(landmark => {
         <hr>
     `;
 
-    // Insertar el HTML generado en el contenedor principal
+    //insert the new html in the container
     cityImgContainer.innerHTML += landmarkHTML;
 });
 
