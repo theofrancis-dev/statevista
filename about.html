@@ -2,160 +2,107 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StateVista</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="./css/styles.css" rel="stylesheet" />
+<html lang="en" class="h-100">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Favicon-->
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />  
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+  <title>StateVista</title>
 
-    <!--font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="keywords" content="Rhode Island Providence Newport Warwick" />
+  <meta name="author" content="theofrancis-dev" />
+  <meta name="Last-Modified" content="2025-02-19T10:30:00Z" />
 
-    <!--google font-->   
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <!-- Canonical URL (Prevents duplicate content issues) -->
+  <link
+    rel="canonical"
+    href="https://theofrancis-dev.github.io/statevista/"
+  />
 
-  </head>
+  <!-- Open Graph (Facebook/Twitter preview) -->
+  <meta property="og:title" content="StateVista" />
+  <meta name="description" content="Information about Rhode Island State and 3 cities." />
+  <meta
+    property="og:image"
+    content="https:/theofrancis-dev.github.io/statevista/brand.jpg"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:url"
+    content="https://theofrancis-dev.github.io/statevista/"
+  />
+
+  <!-- Twitter Card (Better link previews on Twitter) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="StateVista" />
+  <meta name="twitter:description" content="Information ABout US State" />
+
+
+  <meta
+  name="twitter:image"
+  content="https://theofrancis-dev.github.io/statevista/brand.jpg"
+  />
+
+     <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <script
+     src="https://code.jquery.com/jquery-3.7.1.min.js"
+     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+     crossorigin="anonymous"
+   >
+  </script>
+
+  <link href="./css/styles.css" rel="stylesheet" />
+
+  <!--Favicon-->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />  
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--google font-->   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+      <!-- Schema.org Markup (For Google SEO Enhancements) -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://theofrancis-dev.github.io/statevista/",
+          "@type": "Information",
+          "name": "StateVista",
+          "description": "Information about US States",
+          "image": "https://https:/theofrancis-dev.github.io/statevista/brand.jpg",
+          "url": "https://https://theofrancis-dev.github.io/statevista/",
+  
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hialeah",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "postalCode": "33000",
+            "addressCountry": "US"
+          },
+          "telephone": "+1-305-123-4567"
+        }
+      </script>
+
+</head>
   <body>
 
     <header class="d-flex justify-content-between align-items-center">
-      <div class="state-logo">
-        <img
-          src="https://www.dropbox.com/scl/fi/1tt2gn3j4eteadupfihva/ri_state_seal.jpg?rlkey=6e774g583elkpmrzryzu6nnl9&st=o0f32yjh&raw=1"
-          alt="state seal"
-          width="110px"
-          height="auto"
-        />
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Cities</a
-              >
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="./cityvista.html#providence">Providence</a>
-                <a class="dropdown-item" href="./cityvista.html#newport">Newport</a>
-                <a class="dropdown-item" href="./cityvista.html#warwick">Warwick</a>
-              </div>
-            </li>
-            <li class="nav-item  active"><a class="nav-link" href="./about/index.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="./contact/index.html">Contact</a></li>
-          </ul>
-        </div>
-        <form class="form-inline">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-      </nav>
     </header>
 
-    <section class="hero mb-4">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <ol class="carousel-indicators">
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            class="active"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="./img/hero_img_port.jpg"
-              alt="Rhode Island Port at sunset."
-            />
-            <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
-              <h2 class="hero_h2">The Ocean State</h2>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img
-              src="./img/hero_img_lighthouse.jpg"
-              alt="United States • Newport • Rhode Island • Castle Hill Light"
-            />
-            <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
-              <h2 class="hero_h2">Little Rhody</h2>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img
-              src="./img/hero_img_skyline.jpg"
-              alt="Providence, Rhode Isalnd, Skyline"
-            />
-            <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
-              <h2 class="hero_h2">Plantation State</h2>
-            </div>
-          </div>
-        </div>
-
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+    <section id="section-hero">
     </section>
 
     <div class="container">
