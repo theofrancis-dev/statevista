@@ -19,6 +19,11 @@
     <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!--google font-->   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <header class="d-flex justify-content-between align-items-center">
@@ -44,7 +49,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -96,33 +101,33 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="https://www.dropbox.com/scl/fi/4dmgc98a3x4k8wfc19f8m/newport_rhode_isalnd_sunset.jpg?rlkey=d5rh35ccdt4elcp3dzrx7ehxp&e=1&st=ikb0b90z&raw=1"
-              alt="Image 1"
+              src="./img/hero_img_port.jpg"
+              alt="Rhode Island Port at sunset."
             />
             <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1">Welcome to the State of Rhode Island</h1>
+              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
               <h2 class="hero_h2">The Ocean State</h2>
             </div>
           </div>
 
           <div class="carousel-item">
             <img
-              src="https://www.dropbox.com/scl/fi/skkoo2kdhk9vomnfn1zq8/badfon-united-states-rhode-island.jpg?rlkey=vkzwotb7ymxb036omgdpp7v1m&st=s85b7gs0&raw=1"
+              src="./img/hero_img_lighthouse.jpg"
               alt="United States • Newport • Rhode Island • Castle Hill Light"
             />
             <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1">Welcome to the State of Rhode Island</h1>
+              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
               <h2 class="hero_h2">Little Rhody</h2>
             </div>
           </div>
 
           <div class="carousel-item">
             <img
-              src="https://www.dropbox.com/scl/fi/r86voi2ld3u2rkt07u3v5/providence_ri_skyline_2017.jpg?rlkey=7ce82ftrg9ygjcpku55gev8h6&st=0l18kffi&raw=1"
+              src="./img/hero_img_skyline.jpg"
               alt="Providence, Rhode Isalnd, Skyline"
             />
             <div class="carousel-caption d-done d-md-block">
-              <h1 class="hero_h1">Welcome to the State of Rhode Island</h1>
+              <h1 class="hero_h1 lobster-regular">Welcome to the State of Rhode Island</h1>
               <h2 class="hero_h2">Plantation State</h2>
             </div>
           </div>
@@ -150,20 +155,6 @@
     </section>
 
     <div class="container">
-      <!--breads-->
-      <div class="row">
-        <div class="col-md-12 mb-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item active"><a href="#">Home</a></li>
-              <!--
-                                  <li class="breadcrumb-item"><a href="#">City</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page"></li>
-                                -->
-            </ol>
-          </nav>
-        </div>
-      </div>
 
       <div class="row">
         <aside class="col-md-3 aside-menu">
@@ -175,7 +166,7 @@
                     <li><a href="https://www.sos.ri.gov/" target="_blank">Deparment of State</a></li>
                     <li><a href="https://www.usglc.org/state-facts/rhode-island/" target="_blank">Facts and Figures</a></li>
                     <li><a href="https://www.statista.com/statistics/188124/gdp-of-the-us-federal-state-of-rhode-island-since-1997/" target="_blank">statista</a></li>
-                    <li><a href="//www.eia.gov/state/analysis.php?sid=RI" target="_blank">Energy</a></li>                      
+                    <li><a href="https://energy.ri.gov/" target="_blank">Energy</a></li>                      
                     <li><a href="https://en.wikipedia.org/wiki/Rhode_Island" target="_blank">Wikipedia</a></li>
                     <li><a href="https://globaledge.msu.edu/states/rhode-island" target="_blank">Global Bussines</a></li>
                     <li><a href="https://planning.ri.gov/" target="_blank">Planing</a></li>
@@ -183,7 +174,7 @@
                 </ul>
             <li>Cities</li>    
             <ul>
-                <li>Providence</li>
+                <li><a href="./cityvista.html#providence">Providence</a></li>
                 <ul>
                     <li><a href="https://www.providenceri.gov/" target="_blank">Goverment</a></li>
                     <li><a href="https://www.goprovidence.com/" target="_blank"></a>Go Providence</a></li>
@@ -191,7 +182,7 @@
                     <li><a href="https://www.providencejournal.com" target="_blank">Jurnal</a></li>
                     <li><a href="https://www.provlib.org" target="_blank">Public Library</a></li>
                 </ul>
-                <li>Warwick</li>
+                <li><a href="./cityvista.html#warwick">Warwick</a></li>
                 <ul>
                     <li><a href="https://www.warwickri.gov/" target="_blank">Goverment</a></li>
                     <li><a href="https://visitwarwickri.com/things-to-do/" target="_blank">Things to do</a></li>
@@ -199,9 +190,9 @@
                     <li><a href="https://movetowarwickri.com/" target="_blank">Move here</a></li>
                     <li><a href="https://www.census.gov/quickfacts/fact/table/warwickcityrhodeisland/PST045223" target="_blank"> Census</a></li>
                 </ul>
-                <li>Newport</li>
+                <li><a href="./cityvista.html#newport">Newport</a></li>
                 <ul>
-                    <li><a href="" target="_blank">Goverment</a></li>
+                    <li><a href="https://www.cityofnewport.com/" target="_blank">Goverment</a></li>
                     <li><a href="https://www.discovernewport.org/blog/post/top-12-things-to-do-in-newport/" target="_blank">Things to Do</a>
                 </ul>
             </ul>
@@ -214,8 +205,8 @@
 
         <main class="col-md-9">
           <section>
-            <h2>General Information</h2>
-            <p>
+            <h2 id="lbl_gen_info">General Information</h2>
+            <p id="state_gen_info">
                 The smallest state in the United States, is a land of captivating contrasts, 
                 blending rich history with a vibrant contemporary spirit.  Nicknamed "The Ocean State," its coastline is dotted with charming towns,
                 picturesque harbors, and stunning beaches, offering a wealth of recreational opportunities.  Beyond its shores, Rhode Island boasts a
@@ -228,7 +219,7 @@
                 <div class="card feature-card">
                   <div class="card-body">
                     <h5 class="card-title">
-                        <a href="#" target="_blank">Geography</a>                                                
+                        <a href="https://www.britannica.com/place/Rhode-Island-state" target="_blank">Geography</a>                                                
                     </h5>
                     <p class="card-text">
                       <ul>

@@ -20,20 +20,6 @@ Color Classification:
     --success: #58b368;
 }
 
-.hero_h1 {
-    color: var(--success);
-    font-size: 3rem;  /* Adjust size as needed */
-    font-weight: 900;
-    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
-}
-
-.hero_h2 {
-    color: var(--success);
-    font-size: 2rem;  /* Adjust size as needed */
-    font-weight: 700;
-    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
-}
-
 body {
     font-family: "Arial", sans-serif;
     background-color: var(--background);
@@ -46,9 +32,21 @@ footer {
     padding: 15px;
 }
 
-.breadcrumb {
-    background-color: transparent;
+.hero_h1 {
+    color: var(--accent);
+    font-size: 3rem;  
+    font-weight: 900;
+    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
 }
+
+.hero_h2 {
+    color: var(--accent);
+    font-size: 2rem;  
+    font-weight: 700;
+    text-shadow: -1px -1px 0 var(--secondary), 1px -1px 0 var(--secondary), -1px 1px 0 var(--secondary), 1px 1px 0 var(--secondary);
+}
+
+
 
 .feature-card,
 .city-card {
@@ -86,6 +84,17 @@ li > a {
 a:hover {
     color: var(--accent);
 }
+
+#state_gen_info {
+    text-align: justify;    
+}
+
+.lobster-regular {
+    font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 #city-info-head > h1 {
     text-align: center;
@@ -138,5 +147,7 @@ a:hover {
     }
   }
 
-
+#lbl_gen_info {
+    text-align: center;
+}
   
