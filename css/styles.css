@@ -166,3 +166,8 @@ a:hover {
     color: var(--success);
 }
   
+#reference_list > li > a
+{
+  color : var(--secondary);
+  font-size: small;
+}
