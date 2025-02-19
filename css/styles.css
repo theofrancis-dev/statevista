@@ -182,9 +182,23 @@ a:hover {
 }
 
 .form-control {
-  width: 100%; /*set container to full width*/
+  width: 100%; /* full width*/
 }
 
 form {
   text-align: left; 
+}
+
+/**
+ Weather table styles
+*/
+.table-container {
+  margin: 20px auto;
+  max-width: 800px;
+}
+th, td {
+  text-align: center; /* Center align table cells */
+}
+.btn-primary {
+  margin: 10px 0;
 }
