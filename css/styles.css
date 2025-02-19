@@ -171,3 +171,20 @@ a:hover {
   color : var(--secondary);
   font-size: small;
 }
+
+.form-container {
+  align-items: center; /*Vertically center */
+}
+
+.form-group label {
+  display: block; 
+  margin-bottom: 0.5rem; 
+}
+
+.form-control {
+  width: 100%; /*set container to full width*/
+}
+
+form {
+  text-align: left; 
+}

@@ -1,7 +1,6 @@
 function fillHero(){
   let heroElement = document.getElementById("section-hero");
-  if (heroElement){
-    console.log('filling hero...');
+  if (heroElement){   
     heroElement.classList.add('hero');
     heroElement.classList.add('mb4');
 
@@ -9,17 +8,7 @@ function fillHero(){
         id="carouselExampleIndicators"
         class="carousel slide"
         data-ride="carousel"
-      >
-        <ol class="carousel-indicators">
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            class="active"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-
+      >        
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
@@ -81,8 +70,7 @@ function fillHero(){
 };
 
 function fillHeader(){
-  headerElement = document.querySelector('header');
-  console.log (headerElement);  
+  headerElement = document.querySelector('header');   
   if (headerElement) {
     headerElement.innerHTML= `  <div class="state-logo">
         <img
@@ -104,11 +92,13 @@ function fillHeader(){
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav">
-            <li id="nav-index" class="nav-item"><a class="nav-link" href="./index">Home</a></li>
+            <li  class="nav-item">
+            <a id="nav-index" class="nav-link" href="./index.html">Home</a></li>
             <li class="nav-item dropdown">
               <a
+                id="nav-cityvista"
                 class="nav-link dropdown-toggle"
                 href="#"
                 id="navbarDropdown"
@@ -124,8 +114,9 @@ function fillHeader(){
                 <a class="dropdown-item" href="./cityvista.html#warwick">Warwick</a>
               </div>
             </li>
-            <li id="nav-about" class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
-            <li id="nav-contact" class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+            <li  class="nav-item">
+            <a id="nav-about" class="nav-link" href="./about.html">About</a></li>
+            <li class="nav-item"><a id="nav-contact" class="nav-link" href="./contact.html">Contact</a></li>
           </ul>
         </div>
         <form class="form-inline">
