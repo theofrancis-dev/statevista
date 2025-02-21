@@ -191,8 +191,6 @@ function displayCityInfo() {
   
     if (cityHash) {
       const cityName = cityHash.substring(1); // Remove the '#'
-      console.log(`displaying information for ${cityName}`);
-   
   
       if (cityData.hasOwnProperty(cityName)) {
          const cityInfo = cityData[cityName];
@@ -208,8 +206,8 @@ function displayCityInfo() {
 
       } else {
         // Handle cases where the city name is not valid
-        console.log(`error: no property found for ${cityName} `);
-        //window.location.href = "error.html"; // Redirect to error.html
+        //console.log(`error: no property found for ${cityName} `);
+        window.location.href = "404.html"; // Redirect to error.html
       }
     } else {
       // Handle the case where no city is selected (e.g., initial page load of cityvista.html)
@@ -268,27 +266,3 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCityInfo();
   });
 
-
-  
-
-  /*
-  async and await: The getCityDescription, getCityLandmarks, and displayCityInfo functions are now async.  
-  Inside these functions, await fetch(jsonURL) is used to fetch the JSON data.  await response.json() is used to parse the response as JSON.  
-  await pauses the execution of the function until the promise resolves (the data is fetched). This is essential for working with asynchronous operations like fetching data.
-
-   jsonURL Parameter: The jsonURL is now passed as a parameter to the functions. This makes the functions reusable for different JSON file locations.
-
-   Error Handling with try...catch:  The fetch and response.json() calls are wrapped in try...catch blocks.  This handles potential errors during the fetch or parsing process.  If an error occurs, a message is logged to the console, and a default value (e.g., "Error loading city data." or []) is returned.  This prevents your script from crashing.
-
-   Conditional Rendering of Image and Links: The code now conditionally renders the image and links for the website and source URL. It checks if landmark.src, landmark.website, and landmark.source_url exist before adding the corresponding HTML elements. This prevents errors if a landmark doesn't have these properties.
-
-Calling displayCityInfo with jsonURL:  The displayCityInfo function is now called with the jsonURL so that the correct URL is passed to the fetch functions.  This also applies to the event listeners.
-
-How to Use:
-
-Replace Placeholder URL: Replace "your_json_file_url.json" with the actual URL of your JSON file.
-Include the Script: Place this JavaScript code in your HTML file (preferably just before the closing </body> tag) or in a separate .js file that you include in your HTML.
-HTML Structure: Make sure you have elements in your HTML with the IDs city-description and landmarks-container.
-Call displayCityInfo: The example code shows how to call displayCityInfo when the page loads and when the URL hash changes. You can adapt this to your specific needs. Make sure you pass the jsonURL to the function.
-Now, your code will fetch the JSON data from the specified URL, handle errors gracefully, and display the city information correctly.  Remember that the JSON file needs to be accessible from the client's browser (CORS may be a factor if it's on a different domain).
- */

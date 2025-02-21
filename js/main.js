@@ -64,14 +64,14 @@ function fillHero(){
         </a>
       </div>`;
   } else{
-    console.log('hero not found');
+    return false;
   }
 
 };
 
 function fillHeader(){
   headerElement = document.querySelector('header');   
-  if (headerElement) {
+  if (headerElement!=null) {
     headerElement.innerHTML= `  <div class="state-logo">
         <img
           src="https://www.dropbox.com/scl/fi/1tt2gn3j4eteadupfihva/ri_state_seal.jpg?rlkey=6e774g583elkpmrzryzu6nnl9&st=o0f32yjh&raw=1"
@@ -79,6 +79,7 @@ function fillHeader(){
           width="110px"
           height="auto"
         />
+        <span id="lbl_state_name">Rhode Island State</span>
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark">
         <button
@@ -135,27 +136,30 @@ function fillHeader(){
 
 function fillFooter(){
     const footer = document.getElementById("footer");
-    footer.classList.add("text-center");
-    footer.classList.add("mt-4");
 
- footer.innerHTML = `<div class="footer-links">
- <a href="#"><i class="fa fa-facebook-official" style="font-size:36px"></i></a>
- <a href="#"><i class="fa fa-instagram" style="font-size:36px"></i></a>
- <a href="#"><i class="fa fa-twitter-square" style="font-size:36px"></i></a>
- </div>
- <p>Copyright © 2025 Theo Francis. All rights reserved.</p>`; 
+    if (footer!=null){
+      footer.classList.add("text-center");
+      footer.classList.add("mt-4");
+      footer.innerHTML = `<div class="footer-links">
+      <a href="#"><i class="fa fa-facebook-official" style="font-size:36px"></i></a>
+      <a href="#"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+      <a href="#"><i class="fa fa-twitter-square" style="font-size:36px"></i></a>
+      </div>
+      <p>Copyright © 2025 Theo Francis. All rights reserved.</p>`; 
+    }
+    
 };
 
 /**This function will highlihgt the current nav menu */
 function setActivePage(){
   let full_url = window.location.href;
-  let pageName = full_url.substring(full_url.lastIndexOf('/')+1);
-  let navElement = '';
+  let pageName = full_url.substring(full_url.lastIndexOf('/')+1); 
   //remove extension
-  navElement = 'nav-' + pageName.split('.')[0];
-  console.log(navElement);
+  nav_id = 'nav-' + pageName.split('.')[0];
+  const navElement = document.getElementById(nav_id);
+
   if (navElement != null) {
-    document.getElementById(navElement).classList.add('active');
+   navElement.classList.add('active');
   }
   
 }
