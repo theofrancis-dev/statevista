@@ -1,0 +1,10 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp -r index.html 404.html about.html cityvista.html contact.html css/ img/ js/ layout/ android-chrome-192x192.png android-chrome-512x512.png apple-touch-icon.png favicon.ico favicon.png site.webmanifest public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "working"
