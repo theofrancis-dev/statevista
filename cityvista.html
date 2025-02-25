@@ -105,93 +105,82 @@
 
     <section id="section-hero"></section>
 
-    <div class="container">
-      <main>
-        <!--City Name & Description-->
-        <section>
-          <div class="row">
-            <div class="col-md-12 text-center city-info-head">
+
+    <main>
+      <div class="container" style="margin-top: 20px;">
+        <div class="row">
+          <!-- city statistics -->
+          <div class="col-3">
+            <aside id="city-info">
+              <div class="cards-container">
+                <div class="card city-card city-stat-card">
+                  <img src="./img/crowd.jpg" class="card-img-top" alt="population icon" />
+                  <div class="card-body">
+                    <h5 class="card-title">Population</h5>
+                    <p id="city_population" class="card-text">0</p>
+                  </div>
+                </div>
+
+                <div class="card city-card city-stat-card">
+                  <img src="./img/city_hall.jpg" class="card-img-top" alt="Washington City Hall" />
+                  <div class="card-body">
+                    <h5 class="card-title">Incorporated on</h5>
+                    <p id="city_incorporated" class="card-text">yyyy</p>
+                  </div>
+                </div>
+
+                <div class="card city-card city-stat-card">
+                  <img src="./img/compass.jpg" class="card-img-top" alt="Compass" />
+                  <div class="card-body">
+                    <h5 class="card-title">Region Located</h5>
+                    <p id="city_located" class="card-text">located</p>
+                  </div>
+                </div>
+
+                <div class="card city-card city-stat-card">
+                  <img src="./img/suburban.jpg" class="card-img-top" alt="Suburban area" />
+                  <div class="card-body">
+                    <h5 class="card-title">Classification</h5>
+                    <p id="city_type" class="card-text">city type</p>
+                  </div>
+                </div>
+
+                <div class="card city-card city-stat-card">
+                  <img src="./img/income.jpg" class="card-img-top" alt="Income level" />
+                  <div class="card-body">
+                    <h5 class="card-title">Income Level</h5>
+                    <p id="city_avg_income" class="card-text">$0</p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+         <!--general city info-->
+          <div class="col-9">
+
+            <section id="info-city-section" class="text-center city-info-head">
               <h1 id="city_name">City Name</h1>
-              <h5 id="city_description" style="text-align: justify">
+              <div class="flag-container">
+                <img id="city-flag-img" src="./img/city_of_providence_flag-512px.jpg" alt="city flag">
+                <a id="city-flag-author" href="#" target="_blank"> Photo by </a>
+              </div>
+              <div>
+              <h5 id="city_description">
                 city description
               </h5>
-            </div>
+              </div>
+            </section>
+
+            <!-- city pictures -->
+            <section>
+              <div id="city-img"></div>
+            </section>
           </div>
-        </section>
-        <!--section with general information about the state-->
+        </div> <!-- row -->
+      </div> <!-- container -->
+    </main>
 
-        <div class="row citi-row">
-          
-          <div id="city-info" class="col-md-3">
-            <div class="cards-container">
-              <div class="card city-card city-stat-card">
-                <img
-                  src="./img/crowd.jpg"
-                  class="card-img-top"
-                  alt="population icon"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Population</h5>
-                  <p id="city_population" class="card-text">0</p>
-                </div>
-              </div>
-
-              <div class="card city-card city-stat-card">
-                <img
-                  src="./img/city_hall.jpg"
-                  class="card-img-top"
-                  alt="Washington City Hall"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Incorporated on</h5>
-                  <p id="city_incorporated" class="card-text">yyyy</p>
-                </div>
-              </div>
-
-              <div class="card city-card city-stat-card">
-                <img
-                  src="./img/compass.jpg"
-                  class="card-img-top"
-                  alt="Washington City Hall"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Region Located</h5>
-                  <p id="city_located" class="card-text">located</p>
-                </div>
-              </div>
-
-              <!--the classification of the city: urban, suburban, and/or rural-->
-              <div class="card city-card city-stat-card">
-                <img
-                  src="./img/suburban.jpg"
-                  class="card-img-top"
-                  alt="Washington City Hall"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Clasification</h5>
-                  <p id="city_type" class="card-text">city type</p>
-                </div>
-              </div>
-
-              <div class="card city-card city-stat-card">
-                <img
-                  src="./img/income.jpg"
-                  class="card-img-top"
-                  alt="Washington City Hall"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Income Level</h5>
-                  <p id="city_avg_income" class="card-text">$0</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--city pictures, filled with the function displayCityLandmarks(cityName)-->
-          <div id="city-img" class="col-md-9"></div>
-        </div>
-      </main>
-    </div>
 
     <footer id="footer"></footer>
 

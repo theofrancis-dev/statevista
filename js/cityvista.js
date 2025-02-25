@@ -8,7 +8,11 @@ const cityData = JSON.parse(
         "type" : "a suburban city and a historic port town",
         "avg_income" : "$ 43,859 (2022)",
         "located":"Located in Kent County, Rhode Island, USA. It is situated along the western shore of Narragansett Bay, south of Providence and north of East Greenwich.",
-        "updated" : "2025-02-17",
+        "city_flag" : "https://www.dropbox.com/scl/fi/o7gtkprha7bipmkuz051d/warwick_flag.gif?rlkey=lubjfq9333rxgshwj944r20io&st=g2uq5il2&raw=1",
+        "city_flag_alt" : "Warwick's flag.",
+        "city_flag_author" : "Valentin Poposki",
+        "city_flag_author_url" : "https://www.crwflags.com/fotw/flags/us-riwar.html",
+        "updated" : "2025-02-24",
         "landmarks": [
             {
                 "name": "Warwick Neck Lighthouse",
@@ -70,7 +74,11 @@ const cityData = JSON.parse(
         "type" : "Urban.",
         "avg_income" : "$29,539 (2022)",
         "located": "Located in Providence County, Rhode Island, USA. It is situated at the head of Narragansett Bay, near the mouth of the Providence River. It's the capital city of Rhode Island and lies in the northeastern part of the state.",
-        "updated" : "2025-02-17",
+        "city_flag" : "https://www.dropbox.com/scl/fi/8oovo3r33ixglzbzwy7rq/city_of_providence_flag-512px.jpg?rlkey=uami2419k4lz1tsmhjuaabjiy&st=3g0zzpiy&raw=1",
+        "city_flag_alt" : "Providence's city flag.",
+        "city_flag_author" : "Kenneth C. Zirkel, Wikimedia Commons",
+        "city_flag_author_url" : "https://commons.wikimedia.org/wiki/File:City_of_Providence_flag_in_India_Point_Park_(cropped).jpg",
+        "updated" : "2025-02-24",
         "landmarks": [
             {
                 "name": "Rhode Island School of Design Museum (RISD Museum)",
@@ -132,6 +140,10 @@ const cityData = JSON.parse(
         "type" : "suburban",
         "avg_income" : "39,047 USD (2022)",
         "located":"Located on the southern tip of Aquidneck Island in Rhode Island, USA. It's situated in Newport County, along the shores of Narragansett Bay.",
+        "city_flag" : "https://www.dropbox.com/scl/fi/oo1ja7a372z0ka6k9i7yc/flag_of_newport_rhode_island.png?rlkey=pfgrvbtejm055lsyi6588vmco&st=elo37t5c&raw=1",
+        "city_flag_alt" : "Newport's city flag",
+        "city_flag_author" : "Man got cards, Wikimedia Commons.",
+        "city_flag_author_url" : "https://commons.wikimedia.org/wiki/File:Flag_of_Newport,_Rhode_Island.png",
         "updated" : "2025-02-17",
         "landmarks": [
             {
@@ -188,9 +200,10 @@ const cityData = JSON.parse(
 
 function displayCityInfo() {
     const cityHash = window.location.hash;
-  
+
     if (cityHash) {
       const cityName = cityHash.substring(1); // Remove the '#'
+
   
       if (cityData.hasOwnProperty(cityName)) {
          const cityInfo = cityData[cityName];
@@ -201,6 +214,16 @@ function displayCityInfo() {
          document.getElementById("city_type").textContent = cityInfo.type;
          document.getElementById("city_avg_income").textContent = cityInfo.avg_income;
          document.getElementById("city_located").textContent = cityInfo.located;
+
+         /*city flag*/
+         const city_flag_img = document.getElementById("city-flag-img");
+         city_flag_img.src = cityInfo.city_flag;
+         city_flag_img.alt = cityInfo.city_flag_alt;
+
+          const city_flag_author = document.getElementById("city-flag-author");
+          city_flag_author.href = cityInfo.city_flag_author_url;
+          city_flag_author.textContent = "Photo by " + cityInfo.city_flag_author;
+
          //landmarks
          displayCityLandmarks(cityName);
 
@@ -226,7 +249,7 @@ cityImgContainer.innerHTML = '';
 const landmarks = cityData[cityName].landmarks;
 
 
-//dinamically create new html
+//dynamically create new HTML
 landmarks.forEach(landmark => {
     const landmarkHTML = `
         <div id="landmark-container">
@@ -248,7 +271,7 @@ landmarks.forEach(landmark => {
         <hr>
     `;
 
-    //insert the new html in the container
+    //insert the new HTML in the container
     cityImgContainer.innerHTML += landmarkHTML;
 });
 

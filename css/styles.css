@@ -1,20 +1,16 @@
 /*
 color palette
 source: https://colors.muz.li/palette/454d66/309975/58b368/dad873/efeeb4
-
-Color Classification:
---primary: #309975 (Great for buttons, headings, and main CTAs)
---secondary: #454d66 (Perfect for navigation, footer, and text)
---accent: #dad873 (Use for highlights, hover states, or emphasized elements)
---background: #efeeb4 (Ideal for page background or light sections)
---success (support): #58b368 (Can be used for notifications, confirmations, etc.)
-
-
 */
 
 :root {
     --primary: #309975;
     --secondary: #454d66;
+    --secondary-shade-1 : #e1e3ea;
+    --secondary-shade-2 : #a4abc1;
+    --secondary-shade-3 : #677398;
+    --secondary-shade-4 : #3e455b;
+
     --accent: #dad873;
     --background: #efeeb4;
     --success: #58b368;
@@ -140,7 +136,7 @@ a:hover {
     margin-top:10px;
   }
 
-  /* For smaller screens, you might want them to stack */
+  /* For smaller screens */
   @media (max-width: 768px) {
     .city-row {
       flex-direction: column;
@@ -157,9 +153,9 @@ a:hover {
 .glow-link {
     display: inline-block; 
     padding: 5px 10px; /* space around the text */
-    text-decoration: none; /* no underlaying */
+    text-decoration: none; /* no underlying */
     color: var(--success); /* text color*/
-    transition: text-shadow 0.3s ease; /* smooth trasiction */
+    transition: text-shadow 0.3s ease; /* smooth transaction */
 }
 
 .glow-link:hover {    
@@ -212,8 +208,8 @@ th, td {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0; /* Added to remove default margin */
-  min-height: 100vh; /* Changed to ensure full viewport height */
+  margin: 0; /* remove default margin */
+  min-height: 100vh; /* full viewport height */
 }
 
 #error_container {
@@ -230,5 +226,44 @@ th, td {
   font-weight: bold; 
 text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
 color: #dad873;
+}
 
+.flag-container {
+    position: relative;
+    float: left; /* container float left with image */
+    width: 256px; /* Matches the image width to contain both elements */
+    margin-right: 10px; /* spacing from description */
+}
+
+#city-flag-img {
+    float: left;
+    width: 256px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#city-flag-author {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    background-color: var(--secondary);
+    padding-left: 10px;
+    font-size: x-small;
+    color: var( --secondary-shade-1);
+}
+
+#city-flag-author:hover {
+    color: var(--success);
+}
+
+/* Optional: Ensure the description flows correctly */
+#city_description {
+    overflow: hidden; /* Prevents overlap with floated elements */
+    text-align: justify;
+}
+
+#info-city-section {
+    height: 350px;
 }
